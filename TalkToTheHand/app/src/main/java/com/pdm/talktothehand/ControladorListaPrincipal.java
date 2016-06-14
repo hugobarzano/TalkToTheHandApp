@@ -24,6 +24,16 @@ public class ControladorListaPrincipal {
     public static ListView listView;
     public static Context c;
 
+    public static SalaAdapter getAdapterTotal() {
+        return adapterTotal;
+    }
+
+    public static void setAdapterTotal(SalaAdapter adapterTotal) {
+        ControladorListaPrincipal.adapterTotal = adapterTotal;
+    }
+
+    public static SalaAdapter adapterTotal;
+
 
     public static ListView getListView() {
         return listView;
@@ -54,8 +64,8 @@ public class ControladorListaPrincipal {
             public void onResponse(JSONObject response) {
                 Log.d("Response: ", response.toString());
                 //actualizar lista
-                SalaAdapter adapter = new SalaAdapter(ControladorListaPrincipal.c, response);
-                ControladorListaPrincipal.getListView().setAdapter(adapter);
+                adapterTotal = new SalaAdapter(ControladorListaPrincipal.c, response);
+                ControladorListaPrincipal.getListView().setAdapter(adapterTotal);
                 //Asocio el menu contextual a la vista de la lista
                 //registerForContextMenu(ControladorListaPrincipal.getListView());
 

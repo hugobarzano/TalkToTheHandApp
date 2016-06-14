@@ -42,15 +42,14 @@ public class Chaterar extends AppCompatActivity implements View.OnClickListener{
         c=this.getBaseContext();
         Intent intent = getIntent();
         sala = intent.getStringExtra(Principal.ACTIVIDAD_CHAT);
-        mensaje.setText("mensaje");
+
 
         WebView webView = (WebView) this.findViewById(R.id.webView);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setBuiltInZoomControls(true);
         webView.getSettings().setDisplayZoomControls(false);
         webView.loadUrl("http://dispositivosmoviles.herokuapp.com/TalkToTheHand/sala/" + sala);
-                //webView.loadUrl("https://www.google.es/?gfe_rd=cr&ei=2U00V6HBIK2p8wfdsoW4BQ&gws_rd=ssl");
-                webView.setWebViewClient(new WebViewClient());
+        webView.setWebViewClient(new WebViewClient());
 
     }
 

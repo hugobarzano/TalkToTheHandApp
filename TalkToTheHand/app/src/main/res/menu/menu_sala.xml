@@ -2,7 +2,7 @@
 
 
 
-    <item android:id="@+id/entrar" android:title="ENTRAR SALA"  >
+    <item android:id="@+id/entrar" android:title="ENTRAR"  >
     </item>
 
 

@@ -16,16 +16,23 @@
         android:layout_gravity="center_horizontal" />
 
 
-    <EditText
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <EditText
+        android:layout_width="229dp"
         android:layout_height="wrap_content"
         android:inputType="textMultiLine"
         android:ems="10"
         android:id="@+id/mensaje" />
 
     <Button
-        android:layout_width="358dp"
+        android:layout_width="136dp"
         android:layout_height="wrap_content"
-        android:text="Enviar"
+        android:drawableLeft="@drawable/send"
+        android:text=""
         android:id="@+id/botonEnviar" />
+    </LinearLayout>
 </LinearLayout>

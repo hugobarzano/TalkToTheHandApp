@@ -1,5 +1,6 @@
 package com.pdm.talktothehand;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -22,6 +23,7 @@ public class NuevaPregunta extends AppCompatActivity implements View.OnClickList
     private EditText titulo;
     private EditText descripcion;
     private Button crear;
+    Context c;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,8 @@ public class NuevaPregunta extends AppCompatActivity implements View.OnClickList
         crear = (Button) findViewById(R.id.crear);
 
         crear.setOnClickListener(this);
+
+        c=this.getBaseContext();
 
         ControladorListaPrincipal.setC(this.getBaseContext());
 
@@ -57,9 +61,6 @@ public class NuevaPregunta extends AppCompatActivity implements View.OnClickList
                 @Override
                 public void onResponse(JSONObject response) {
                     Log.d("Response: ", response.toString());
-                    ControladorListaPrincipal.updateListaPrincipal();
-
-
 
                 }
             }, new Response.ErrorListener() {
@@ -72,9 +73,11 @@ public class NuevaPregunta extends AppCompatActivity implements View.OnClickList
             Toast.makeText(this, "Cuestion Creada", Toast.LENGTH_SHORT).show();
             gestorPeticiones.setCola(ControladorListaPrincipal.getC());
             gestorPeticiones.getCola().add(jsObjRequest);
-            ControladorListaPrincipal.updateListaPrincipal();
+
             this.finish();
-            }
+
+        }
+
     }
 
 }

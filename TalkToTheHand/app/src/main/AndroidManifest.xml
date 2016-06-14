@@ -39,8 +39,9 @@
         <activity
             android:name=".Chaterar"
             android:label="@string/title_activity_chaterar"
+            android:windowSoftInputMode="adjustPan"
             android:parentActivityName=".Principal"
-            android:theme="@style/AppTheme.NoActionBar">
+            >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.pdm.talktothehand.Principal" />
